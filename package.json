@@ -1,0 +1,76 @@
+{
+    "name": "phuphan-dev-essentials",
+    "displayName": "Phu Phan Dev Essentials",
+    "description": "Cấu hình chuẩn cá nhân hóa: Auto format 4 spaces, phím tắt format tiện lợi và bộ thiết lập tối ưu",
+    "version": "1.0.0",
+    "publisher": "phuphan",
+    "engines": {
+        "vscode": "^1.85.0"
+    },
+    "categories": [
+        "Formatters",
+        "Keymaps",
+        "Other"
+    ],
+    "activationEvents": [
+        "onStartupFinished"
+    ],
+    "main": "./out/extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "phuphan.applyGlobalSettings",
+                "title": "Áp dụng cấu hình chuẩn 4 Spaces (Global User Settings)",
+                "category": "Phu Phan Essentials"
+            },
+            {
+                "command": "phuphan.applyWorkspaceSettings",
+                "title": "Áp dụng cấu hình chuẩn 4 Spaces vào Workspace hiện tại",
+                "category": "Phu Phan Essentials"
+            },
+            {
+                "command": "phuphan.formatDocument",
+                "title": "Format Document (Chuẩn 4 Spaces)",
+                "category": "Phu Phan Essentials"
+            }
+        ],
+        "keybindings": [
+            {
+                "command": "phuphan.formatDocument",
+                "key": "cmd+alt+l",
+                "mac": "cmd+alt+l",
+                "win": "ctrl+alt+l",
+                "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly"
+            },
+            {
+                "command": "phuphan.formatDocument",
+                "key": "shift+alt+f",
+                "mac": "shift+alt+f",
+                "win": "shift+alt+f",
+                "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly"
+            }
+        ],
+        "configuration": {
+            "title": "Phu Phan Dev Essentials",
+            "properties": {
+                "phuphan.autoApplyOnStartup": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Tự động kiểm tra và áp dụng chuẩn tab 4 spaces khi mở VS Code"
+                }
+            }
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "package": "vsce package --no-git-tag-version --allow-missing-repository"
+    },
+    "devDependencies": {
+        "@types/node": "20.x",
+        "@types/vscode": "^1.85.0",
+        "@vscode/vsce": "^3.9.2",
+        "typescript": "^5.3.3"
+    }
+}
