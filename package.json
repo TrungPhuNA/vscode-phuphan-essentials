@@ -2,7 +2,7 @@
     "name": "phuphan-dev-essentials",
     "displayName": "Phu Phan Dev Essentials",
     "description": "Cấu hình chuẩn cá nhân hóa: Auto format 4 spaces, phím tắt format tiện lợi và bộ thiết lập tối ưu",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "publisher": "phuphan",
     "icon": "icon.png",
     "engines": {
